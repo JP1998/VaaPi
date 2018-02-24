@@ -44,7 +44,7 @@ public class MarkusUI extends UI {
         setContent(layout);
     }
 
-    @WebServlet(urlPatterns = "/markus/", name = "MyUIServlet", asyncSupported = true)
+    @WebServlet(urlPatterns = "/markus/*", name = "MarkusUIServlet", asyncSupported = true)
     @VaadinServletConfiguration(ui = MarkusUI.class, productionMode = false)
     public static class MyUIServlet extends VaadinServlet {
     }
