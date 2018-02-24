@@ -1,4 +1,4 @@
-package de.sc.vaapi;
+package de.sc.vaapi.jonny;
 
 import javax.servlet.annotation.WebServlet;
 
@@ -20,11 +20,14 @@ import com.vaadin.ui.VerticalLayout;
  * overridden to add component to the user interface and initialize non-component functionality.
  */
 @Theme("mytheme")
-public class MyUI extends UI {
+public class JonnysUI extends UI {
 
     @Override
     protected void init(VaadinRequest vaadinRequest) {
         final VerticalLayout layout = new VerticalLayout();
+        
+        Label h1 = new Label("Welcome to Jonnys-Page");
+        h1.setHeight(20, Unit.POINTS);
         
         final TextField name = new TextField();
         name.setCaption("Type your name here:");
@@ -35,13 +38,13 @@ public class MyUI extends UI {
                     + ", it works!"));
         });
         
-        layout.addComponents(name, button);
+        layout.addComponents(h1, name, button);
         
         setContent(layout);
     }
 
-    @WebServlet(urlPatterns = "/*", name = "MyUIServlet", asyncSupported = true)
-    @VaadinServletConfiguration(ui = MyUI.class, productionMode = false)
+    @WebServlet(urlPatterns = "/jp/*", name = "MyUIServlet", asyncSupported = true)
+    @VaadinServletConfiguration(ui = JonnysUI.class, productionMode = false)
     public static class MyUIServlet extends VaadinServlet {
     }
 }
