@@ -43,7 +43,7 @@ public class JonnysUI extends UI {
         setContent(layout);
     }
 
-    @WebServlet(urlPatterns = "/jp/*", name = "MyUIServlet", asyncSupported = true)
+    @WebServlet(urlPatterns = "/jp/", name = "MyUIServlet", asyncSupported = true)
     @VaadinServletConfiguration(ui = JonnysUI.class, productionMode = false)
     public static class MyUIServlet extends VaadinServlet {
     }
